@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default" />
+
+
+<f:section name="content">
+
+    <div class="docu_ce__show">
+        <h2>
+            {f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:backendlayout')}
+        </h2>
+        <h3>
+            {f:translate(key:'{backendLayoutTitle}', default: '{backendLayoutTitle}')}
+        </h3>
+        <f:debug inline="1" plainText="false" ansiColors="false">{backendLayoutConfig}</f:debug>
+
+        <div>
+            <f:link.action action="list"><f:translate key="LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:back" /></f:link.action>
+        </div>
+
+    </div>
+
+</f:section>
+</html>

@@ -1,0 +1,79 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default" />
+
+
+<f:section name="content">
+
+    <div class="docu_ce__show">
+        <h2>
+            <core:icon identifier="{ceWizardItem.iconIdentifier}" size="small" /> {ctype}
+        </h2>
+        <f:if condition="{ceWizardItem -> f:count()} > 0">
+            <f:then>
+                <h3>
+                    <f:translate key="{ceWizardItem.title}" />
+                </h3>
+                <p>
+                    <f:translate key="{ceWizardItem.description}" />
+                </p>
+            </f:then>
+            <f:else>
+                <p>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.no_description')}</p>
+            </f:else>
+        </f:if>
+        <p>
+            @TBD: TCA?, allowed colPos, edit Page
+        </p>
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th class="table-primary">{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:page_title')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:page_uid')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:page_hidden')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:page_language')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:content_header')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:content_uid')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:content_colPos')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:content_hidden')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:edit')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:preview')}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <f:for each="{elements}" as="element">
+                <tr class="{f:if(condition: '{element.page_hidden} == 1', then: 'row-light')}">
+                    <td class="bg-table-page"> <core:icon identifier="{element.page_icon}" size="small" /> {element.page_title}</td>
+                    <td class="bg-table-page">{element.page_uid}</td>
+                    <td class="bg-table-page {f:if(condition: '{element.page_hidden} == 1', then: 'cell-highlight')}">{element.page_hidden}</td>
+                    <td class="bg-table-page">{element.page_language}</td>
+                    <td class="{f:if(condition: '{element.content_hidden} == 1', then: 'cell-light')}">{element.content_header}</td>
+                    <td class="{f:if(condition: '{element.content_hidden} == 1', then: 'cell-light')}">{element.content_uid}</td>
+                    <td class="{f:if(condition: '{element.content_hidden} == 1', then: 'cell-light')}">{element.content_colPos}</td>
+                    <td class="{f:if(condition: '{element.content_hidden} == 1', then: 'cell-highlight')}">{element.content_hidden}</td>
+                    <td>
+                        <a href="{be:uri.editRecord(uid:element.content_uid, table:'tt_content')}">
+                            <core:icon identifier="actions-document-edit" size="small" />
+                        </a>
+                    </td>
+                    <td>
+                        <f:link.typolink parameter="{element.page_uid}#{element.content_uid}" target="_blank">
+                            <core:icon identifier="actions-document-view" size="small" />
+                        </f:link.typolink>
+                    </td>
+                </tr>
+            </f:for>
+            </tbody>
+        </table>
+
+        <div>
+            <f:link.action action="list"><f:translate key="LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:back" /></f:link.action>
+        </div>
+
+    </div>
+
+</f:section>
+</html>

@@ -1,0 +1,28 @@
+{
+    "name": "supseven/docu-ce",
+    "type": "typo3-cms-extension",
+    "description": "Shows all content elements that are in use on a website.",
+    "authors": [
+        {
+            "name": "Marlen Grunert",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Supseven\\DocuCe\\": "Classes"
+        }
+    },
+    "replace": {
+        "typo3-ter/docu-ce": "self.version"
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "docu_ce"
+        }
+    }
+}

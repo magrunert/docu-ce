@@ -1,0 +1,86 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default" />
+
+<f:section name="content">
+    <h2>
+        {f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:list_ctypes')}
+    </h2>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.icon')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.title')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.description')}</th>
+                <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.number')}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <f:for each="{elements}" as="element">
+                <tr>
+                    <td>
+                        <f:link.action action="show" arguments="{ctype : element.ctype}">{element.ctype}</f:link.action>
+                    </td>
+                    <td>
+                        <core:icon identifier="{element.wizardItem.iconIdentifier}" size="small" />
+                    </td>
+                    <td>
+                        <f:if condition="{element.wizardItem.title}">
+                            <f:translate key="{element.wizardItem.title}" />
+                        </f:if>
+                    </td>
+                    <td>
+                        <f:if condition="{element.wizardItem.description}">
+                            <f:translate key="{element.wizardItem.description}" />
+                        </f:if>
+                    </td>
+                    <td>
+                        {element.number}
+                    </td>
+                    <td>
+                        <f:link.action action="show" arguments="{ctype : element.ctype}">{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.show_more')}</f:link.action>
+                    </td>
+                </tr>
+            </f:for>
+        </tbody>
+    </table>
+
+    <h2>
+        {f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:list_backendlayouts')}
+    </h2>
+
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:backendlayout')}</th>
+            <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:backendlayout.icon')}</th>
+            <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:backendlayout.title')}</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <f:for each="{backendLayouts}" as="backendLayout">
+            <tr>
+                <td>
+                    {backendLayout.key}
+                </td>
+                <td>
+                    <core:icon identifier="{backendLayout.icon}" size="small" />
+                </td>
+                <td>
+                    {f:translate(key:'{backendLayout.title}', default: '{backendLayout.title}')}
+                </td>
+                <td>
+                    <f:link.action action="showBackendLayout" arguments="{backendLayout : backendLayout}">{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:ctype.show_more')}</f:link.action>
+                </td>
+            </tr>
+        </f:for>
+        </tbody>
+    </table>
+
+</f:section>
+</html>

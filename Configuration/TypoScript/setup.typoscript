@@ -1,0 +1,15 @@
+
+# Module configuration
+module.tx_docuce_help_docucelistcontentelements {
+    persistence {
+        storagePid = {$module.tx_docuce_listcontentelements.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:docu_ce/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_docuce_listcontentelements.view.templateRootPath}
+        partialRootPaths.0 = EXT:docu_ce/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_docuce_listcontentelements.view.partialRootPath}
+        layoutRootPaths.0 = EXT:docu_ce/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_docuce_listcontentelements.view.layoutRootPath}
+    }
+}

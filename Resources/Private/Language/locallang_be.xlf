@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" original="" datatype="plaintext" date="2022-11-08T13:59:15+01:00">
+		<body>
+			<trans-unit id="back" resname="back">
+				<source>back</source>
+			</trans-unit>
+			<trans-unit id="backendlayout" resname="backendlayout">
+				<source>Backendlayout</source>
+			</trans-unit>
+			<trans-unit id="backendlayout.icon" resname="backendlayout.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="backendlayout.title" resname="backendlayout.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="content_colPos" resname="content_colPos">
+				<source>Content ColPos</source>
+			</trans-unit>
+			<trans-unit id="content_header" resname="content_header">
+				<source>Content header</source>
+			</trans-unit>
+			<trans-unit id="content_hidden" resname="content_hidden">
+				<source>Hidden element</source>
+			</trans-unit>
+			<trans-unit id="content_uid" resname="content_uid">
+				<source>Content uid</source>
+			</trans-unit>
+			<trans-unit id="ctype" resname="ctype">
+				<source>Ctype</source>
+			</trans-unit>
+			<trans-unit id="ctype.description" resname="ctype.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="ctype.icon" resname="ctype.icon">
+				<source>Icon</source>
+			</trans-unit>
+			<trans-unit id="ctype.no_description" resname="ctype.no_description">
+				<source>No description found</source>
+			</trans-unit>
+			<trans-unit id="ctype.number" resname="ctype.number">
+				<source>References</source>
+			</trans-unit>
+			<trans-unit id="ctype.show_more" resname="ctype.show_more">
+				<source>show more info</source>
+			</trans-unit>
+			<trans-unit id="ctype.title" resname="ctype.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="edit" resname="edit">
+				<source>edit</source>
+			</trans-unit>
+			<trans-unit id="list_backendlayouts" resname="list_backendlayouts">
+				<source>Backendlayouts</source>
+			</trans-unit>
+			<trans-unit id="list_ctypes" resname="list_ctypes">
+				<source>List of used content types</source>
+			</trans-unit>
+			<trans-unit id="page_hidden" resname="page_hidden">
+				<source>Hidden page</source>
+			</trans-unit>
+			<trans-unit id="page_language" resname="page_language">
+				<source>Page language</source>
+			</trans-unit>
+			<trans-unit id="page_title" resname="page_title">
+				<source>Page title</source>
+			</trans-unit>
+			<trans-unit id="page_uid" resname="page_uid">
+				<source>Page uid</source>
+			</trans-unit>
+			<trans-unit id="preview" resname="preview">
+				<source>preview</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,16 @@
+.table>tbody>tr.row-light>td {
+    color: lightgrey;
+}
+
+.table>tbody>tr>td.cell-light {
+    color: lightgrey;
+}
+
+.table>tbody>tr>td.cell-highlight {
+    color: red;
+}
+
+.bg-table-page {
+    --bs-bg-opacity: 0.2;
+    background-color: rgba(var(--bs-info-rgb),var(--bs-bg-opacity)) !important;
+}

@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+
+<f:be.container pageTitle="documentation"
+				includeCssFiles="{0: '{f:uri.resource(path:\'Css/Styles.css\')}'}"
+>
+
+	<div class="docu_ce p-4">
+		<h1> <f:translate key="LLL:EXT:docu_ce/Resources/Private/Language/locallang_listcontentelements.xlf:mlang_tabs_tab" /></h1>
+		<f:render section="content"/>
+	</div>
+</f:be.container>
+
+</html>
+
