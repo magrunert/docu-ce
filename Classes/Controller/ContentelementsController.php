@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Supseven\DocuCe\Controller;
+namespace Magrunert\DocuCe\Controller;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use Supseven\DocuCe\Utility\Utility;
+use Magrunert\DocuCe\Utility\Utility;
 
 /**
  * class ContentelementsController

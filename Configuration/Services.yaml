@@ -4,5 +4,5 @@ services:
     autoconfigure: true
     public: true
 
-  Supseven\DocuCe\:
+  Magrunert\DocuCe\:
     resource: '../Classes/*'

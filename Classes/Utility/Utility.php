@@ -1,6 +1,6 @@
 <?php
 
-namespace Supseven\DocuCe\Utility;
+namespace Magrunert\DocuCe\Utility;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
