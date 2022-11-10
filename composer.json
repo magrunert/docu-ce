@@ -1,6 +1,7 @@
 {
     "name": "magrunert/docu-ce",
     "type": "typo3-cms-extension",
+    "version": "1.0.0",
     "description": "Shows all content elements that are in use on a website.",
     "authors": [
         {
