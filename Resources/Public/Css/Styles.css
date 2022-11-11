@@ -1,3 +1,21 @@
+/*general*/
+body,
+table {
+    font-size: 0.875rem;
+}
+/*Header*/
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.125rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
 .table>tbody>tr.row-light>td {
     color: lightgrey;
 }

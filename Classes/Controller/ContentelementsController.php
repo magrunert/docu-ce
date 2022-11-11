@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Magrunert\DocuCe\Controller;
@@ -12,7 +13,6 @@ use Magrunert\DocuCe\Utility\Utility;
  */
 class ContentelementsController extends ActionController
 {
-
     /**
      * @var Utility
      */
@@ -50,7 +50,7 @@ class ContentelementsController extends ActionController
 
         // get icon of pagetype
         $i=0;
-        foreach ($elements as $item ) {
+        foreach ($elements as $item) {
             $icon = $GLOBALS['TCA']['pages']['columns']['doktype']['config']['items'][$item['page_doktype']][2];
             $elements[$i]['page_icon'] = $icon;
             $i++;
@@ -71,6 +71,5 @@ class ContentelementsController extends ActionController
 
         $this->view->assign('backendLayoutConfig', $backendLayoutConfig);
         $this->view->assign('backendLayoutTitle', $backendLayout['backendLayout']['title']);
-
     }
 }

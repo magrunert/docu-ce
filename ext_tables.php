@@ -1,7 +1,8 @@
 <?php
+
 defined('TYPO3') || die();
 
-(static function() {
+(static function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
         'DocuCe',
         'help',
@@ -9,7 +10,7 @@ defined('TYPO3') || die();
         '',
         [
             \Magrunert\DocuCe\Controller\ContentelementsController::class => 'list, show, showBackendLayout',
-            
+
         ],
         [
             'access' => 'admin',
@@ -17,5 +18,4 @@ defined('TYPO3') || die();
             'labels' => 'LLL:EXT:docu_ce/Resources/Private/Language/locallang_listcontentelements.xlf',
         ]
     );
-
 })();

@@ -13,7 +13,6 @@ use TYPO3\CMS\Backend\Utility\BackendUtility;
  */
 class Utility
 {
-
     /**
      * @var ConnectionPool
      */
@@ -76,7 +75,7 @@ class Utility
             ->getRestrictions()
             ->removeByType(HiddenRestriction::class);
 
-        $qb->select('c.header as content_header','c.uid as content_uid','p.uid as page_uid','c.hidden as content_hidden','c.colPos as content_colPos','p.title as page_title','p.doktype as page_doktype','p.sys_language_uid as page_language','p.hidden as page_hidden');
+        $qb->select('c.header as content_header', 'c.uid as content_uid', 'p.uid as page_uid', 'c.hidden as content_hidden', 'c.colPos as content_colPos', 'p.title as page_title', 'p.doktype as page_doktype', 'p.sys_language_uid as page_language', 'p.hidden as page_hidden');
         $qb->from('tt_content', 'c');
         $qb->leftJoin('c', 'pages', 'p', 'c.pid = p.uid');
         $qb->where(
@@ -89,7 +88,8 @@ class Utility
         return $result;
     }
 
-    public function getWizardItems($cType): array {
+    public function getWizardItems($cType): array
+    {
         /**
          *
          * Page Config: get Content Element Information from mod.wizards Array for a special cType: ceWizardItems
@@ -102,9 +102,8 @@ class Utility
         $ceWizardItems = BackendUtility::getPagesTSconfig(0)['mod.']['wizards.']['newContentElement.']['wizardItems.'] ?? [];
 
         $ceWizardItem = [];
-        if(is_array($ceWizardItems) && count($ceWizardItems) > 0) {
-            foreach($ceWizardItems as $item) {
-
+        if (is_array($ceWizardItems) && count($ceWizardItems) > 0) {
+            foreach ($ceWizardItems as $item) {
                 // @TBD regex contains string einbauen
                 if (array_search($cType . '.', array_keys($item['elements.']))) {
                     $ceWizardItem = $item['elements.'][$cType. '.'];
@@ -129,7 +128,7 @@ class Utility
         $backendLayouts = BackendUtility::getPagesTSconfig(0)['mod.']['web_layout.']['BackendLayouts.'] ?? [];
 
         $backendLayout = [];
-        if(is_array($backendLayouts) && count($backendLayouts) > 0) {
+        if (is_array($backendLayouts) && count($backendLayouts) > 0) {
             foreach ($backendLayouts as $key => $item) {
                 $backendLayout[] = [
                     'key' => $key,
@@ -141,5 +140,4 @@ class Utility
 
         return $backendLayout;
     }
-
 }

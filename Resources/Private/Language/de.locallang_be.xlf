@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2022-11-08T13:59:15+01:00">
+	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2022-11-11T11:57:43+01:00">
 		<body>
 			<trans-unit id="back" resname="back">
 				<source>back</source>
@@ -65,6 +65,10 @@
 			<trans-unit id="edit" resname="edit">
 				<source>edit</source>
 				<target>bearbeiten</target>
+			</trans-unit>
+			<trans-unit id="external_url.info" resname="external_url.info">
+				<source>You can insert an external url in &lt;code&gt;mod.wizards.newContentElement.wizardItems.common.elements.[cType].external_url&lt;/code&gt;</source>
+				<target>Sie können eine externe Url in &lt;code&gt;mod.wizards.newContentElement.wizardItems.common.elements.[cType].external_url&lt;/code&gt; einfügen.</target>
 			</trans-unit>
 			<trans-unit id="list_backendlayouts" resname="list_backendlayouts">
 				<source>Backendlayouts</source>
