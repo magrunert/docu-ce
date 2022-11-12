@@ -28,6 +28,8 @@ class ContentelementsController extends ActionController
 
     public function listAction(): void
     {
+        // get all Ctypes except list
+        // @TBD: set manually unwanted cTypes?
         $cTypes = $this->utility->getAllCtypes();
 
         $elements=[];
@@ -48,13 +50,7 @@ class ContentelementsController extends ActionController
         $cType = $this->request->getArgument('ctype');
         $elements = $this->utility->getCtype($cType);
 
-        // get icon of pagetype
-        $i=0;
-        foreach ($elements as $item) {
-            $icon = $GLOBALS['TCA']['pages']['columns']['doktype']['config']['items'][$item['page_doktype']][2];
-            $elements[$i]['page_icon'] = $icon;
-            $i++;
-        }
+        // @TBD get icon of pagetype
 
         $ceWizardItem = $this->utility->getWizardItems($cType);
 

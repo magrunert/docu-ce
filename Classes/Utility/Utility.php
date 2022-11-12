@@ -52,8 +52,12 @@ class Utility
         $qb->addSelectLiteral('COUNT(*) AS ' . $qb->quoteIdentifier('count'));
         $qb->from('tt_content', 'c');
         $qb->leftJoin('c', 'pages', 'p', 'c.pid = p.uid');
+        $qb->where(
+            $qb->expr()->isNotNull('p.uid'),
+            $qb->expr()->neq('c.CType', '"list"'),
+        );
         $qb->groupBy('c.CType');
-        $qb->orderBy('c.CType');
+        $qb->orderBy('count','DESC');
 
         $result = $qb->execute()->fetchAll();
 
@@ -79,7 +83,8 @@ class Utility
         $qb->from('tt_content', 'c');
         $qb->leftJoin('c', 'pages', 'p', 'c.pid = p.uid');
         $qb->where(
-            $qb->expr()->eq('CType', '"'. $ctype . '"')
+            $qb->expr()->eq('CType', '"'. $ctype . '"'),
+            $qb->expr()->isNotNull('p.uid')
         );
         $qb->orderBy('page_uid');
 

@@ -8,6 +8,10 @@
 <f:section name="content">
 
     <div class="docu_ce__show">
+        <div>
+            <f:link.action action="list"><f:translate key="LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:back" /></f:link.action>
+        </div>
+
         <h2>
             <core:icon identifier="{ceWizardItem.iconIdentifier}" size="small" /> {ctype}
         </h2>
@@ -18,7 +22,7 @@
                 </h3>
 
                 <div class="mb-2">
-                    <strong>Ticket:</strong>
+                    <strong>More Information:</strong>
                     <f:if condition="{ceWizardItem.external_url}">
                         <f:then>
                             <div>
@@ -26,9 +30,7 @@
                             </div>
                         </f:then>
                         <f:else>
-                            <span class="text-info">
-                                {f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:external_url.info') -> f:format.raw()}
-                            </span>
+                            -
                         </f:else>
                     </f:if>
                 </div>
@@ -63,7 +65,7 @@
             <tbody>
             <f:for each="{elements}" as="element">
                 <tr class="{f:if(condition: '{element.page_hidden} == 1', then: 'row-light')}">
-                    <td class="bg-table-page"> <core:icon identifier="{element.page_icon}" size="small" /> {element.page_title}</td>
+                    <td class="bg-table-page"> {element.page_title}</td>
                     <td class="bg-table-page">{element.page_uid}</td>
                     <td class="bg-table-page {f:if(condition: '{element.page_hidden} == 1', then: 'cell-highlight')}">{element.page_hidden}</td>
                     <td class="bg-table-page">{element.page_language}</td>
@@ -77,9 +79,12 @@
                         </a>
                     </td>
                     <td>
-                        <f:link.typolink parameter="{element.page_uid}#{element.content_uid}" target="_blank">
-                            <core:icon identifier="actions-document-view" size="small" />
-                        </f:link.typolink>
+                        <f:comment>
+                            @TBD add preview (viewhelper to get baseurl)
+                            <!--                        <f:link.typolink parameter="{element.page_uid}#{element.content_uid}" target="_blank">-->
+                            <!--                            <core:icon identifier="actions-document-view" size="small" />-->
+                            <!--                        </f:link.typolink>-->
+                        </f:comment>
                     </td>
                 </tr>
             </f:for>

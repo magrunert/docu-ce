@@ -17,15 +17,16 @@ h4 {
 }
 
 .table>tbody>tr.row-light>td {
-    color: lightgrey;
+    color: dimgrey;
 }
 
 .table>tbody>tr>td.cell-light {
-    color: lightgrey;
+    color: dimgrey;
 }
 
 .table>tbody>tr>td.cell-highlight {
-    color: red;
+    --bs-bg-opacity: 0.2;
+    background-color: rgba(var(--bs-danger-rgb),var(--bs-bg-opacity)) !important;
 }
 
 .bg-table-page {
