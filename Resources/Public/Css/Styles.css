@@ -33,3 +33,32 @@ h4 {
     --bs-bg-opacity: 0.2;
     background-color: rgba(var(--bs-info-rgb),var(--bs-bg-opacity)) !important;
 }
+
+/*Accordion*/
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: darkgrey;
+}
+
+.panel {
+    background-color: white;
+    display: none;
+}
+
+.accordion:after {
+    content: '\02795';
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+}

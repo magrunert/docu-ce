@@ -79,7 +79,7 @@ class Utility
             ->getRestrictions()
             ->removeByType(HiddenRestriction::class);
 
-        $qb->select('c.header as content_header', 'c.uid as content_uid', 'p.uid as page_uid', 'c.hidden as content_hidden', 'c.colPos as content_colPos', 'p.title as page_title', 'p.doktype as page_doktype', 'p.sys_language_uid as page_language', 'p.hidden as page_hidden');
+        $qb->select('c.header as content_header', 'c.uid as content_uid', 'p.uid as page_uid', 'c.hidden as content_hidden', 'c.colPos as content_colPos', 'p.title as page_title', 'p.doktype as page_doktype', 'p.sys_language_uid as page_language', 'p.hidden as page_hidden', 'p.slug as page_slug');
         $qb->from('tt_content', 'c');
         $qb->leftJoin('c', 'pages', 'p', 'c.pid = p.uid');
         $qb->where(
@@ -103,7 +103,6 @@ class Utility
          *
          */
 
-        //@TBD PAGE ROOT ID, if more page tree exist
         $ceWizardItems = BackendUtility::getPagesTSconfig(0)['mod.']['wizards.']['newContentElement.']['wizardItems.'] ?? [];
 
         $ceWizardItem = [];
