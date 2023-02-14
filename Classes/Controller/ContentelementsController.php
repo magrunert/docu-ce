@@ -106,31 +106,6 @@ class ContentelementsController extends ActionController
         return new HtmlResponse($view->render());
     }
 
-    private function getFile(string $path): string
-    {
-//        $path = PathUtility::getCanonicalPath($path);
-//        if (!StringUtility::beginsWith($path, $this->extensionConfiguration['documentationRootPath'] ?? '')) {
-//            return '';
-//        }
-
-//        $path = "EXT:theme/Resources/Public/Docs";
-        $path = "/packages/theme/Resources/Private/Docs/index.md";
-
-        $fileInfo = pathinfo($path);
-
-        if (!in_array(strtolower($fileInfo['extension']), ['png', 'svg', 'gif', 'md', 'doc', 'docx', 'jpeg', 'jpg'], true)) {
-            return '';
-        }
-
-        $file = Environment::getProjectPath() . $path;
-
-        if (!is_file($file)) {
-            return '';
-        }
-
-        return $file;
-    }
-
     private function getStandaloneView(): StandaloneView
     {
         //$settings = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('docu-ce');
