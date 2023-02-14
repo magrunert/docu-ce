@@ -10,7 +10,7 @@ defined('TYPO3') || die();
         '',
         [
             \Magrunert\DocuCe\Controller\ContentelementsController::class => 'list, show, showBackendLayout, mdFile',
-
+            \Magrunert\DocuCe\Controller\ContentelementsServeController::class => 'main',
         ],
         [
             'access' => 'admin',

@@ -68,32 +68,10 @@ class ContentelementsServeController
         }
 
         $file = Environment::getPublicPath() . $path;
-        \TYPO3\CMS\Extbase\Utility\DebuggerUtility::var_dump($file);
-        die();
         if (!is_file($file)) {
             return '';
         }
 
         return $file;
     }
-
-//    private function getStandaloneView(): StandaloneView
-//    {
-//        $docRootPath = $settings['documentationRootPath'] ?? '';
-//        if (!$docRootPath) {
-//            throw new \UnexpectedValueException('Documentation root path not set', 1609235458);
-//        }
-//
-//        $publicResourcesPath = '../../' . PathUtility::getRelativePathTo(ExtensionManagementUtility::extPath('doc')) . 'Resources/Public/docsify/';
-//
-//
-//        $templatePathAndFilename = GeneralUtility::getFileAbsFileName('EXT:doc/Resources/Private/Templates/Module.html');
-//        $view = GeneralUtility::makeInstance(StandaloneView::class);
-//        $view->setTemplatePathAndFilename($templatePathAndFilename);
-//        $view->assignMultiple([
-//            'path' => $publicResourcesPath,
-//            'docRoothPath' => $docRootPath,
-//        ]);
-//        return $view;
-//    }
 }
