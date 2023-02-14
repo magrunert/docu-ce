@@ -4,8 +4,6 @@
 The extension lists all content elements (and hidden) that are used on the website.
 Additional information about the content elements is displayed, as well as information of the cType from page TSconfig.
 
-##
-add some documentation
 
 ## Installation
 Just do
