@@ -57,9 +57,9 @@ class Utility
             $qb->expr()->neq('c.CType', '"list"'),
         );
         $qb->groupBy('c.CType');
-        $qb->orderBy('count','DESC');
+        $qb->orderBy('count', 'DESC');
 
-        $result = $qb->execute()->fetchAll();
+        $result = $qb->execute()->fetchAllAssociative();
 
         return $result;
     }
@@ -88,7 +88,7 @@ class Utility
         );
         $qb->orderBy('page_uid');
 
-        $result = $qb->execute()->fetchAll();
+        $result = $qb->execute()->fetchAllAssociative();
 
         return $result;
     }
@@ -108,15 +108,40 @@ class Utility
         $ceWizardItem = [];
         if (is_array($ceWizardItems) && count($ceWizardItems) > 0) {
             foreach ($ceWizardItems as $item) {
-                // @TBD regex contains string einbauen
-                if (array_search($cType . '.', array_keys($item['elements.']))) {
-                    $ceWizardItem = $item['elements.'][$cType. '.'];
-                    break;
+                foreach ($item['elements.'] as $element) {
+                    if (array_search($cType, $element['tt_content_defValues.'])) {
+                        $ceWizardItem = $element;
+                        break;
+                    }
                 }
             }
         }
 
         return $ceWizardItem;
+    }
+
+    public function getAllWizardItems(): array
+    {
+        /**
+         *
+         * Page Config: get Content Element Information from mod.wizards Array
+         *
+         * @return      array
+         *
+         */
+
+        $ceWizardItems = BackendUtility::getPagesTSconfig(0)['mod.']['wizards.']['newContentElement.']['wizardItems.'] ?? [];
+
+        $cTypes = [];
+        if (is_array($ceWizardItems) && count($ceWizardItems) > 0) {
+            foreach ($ceWizardItems as $item) {
+                foreach ($item['elements.'] as $element) {
+                    $cTypes[] = $element['tt_content_defValues.']['CType'];
+                }
+            }
+        }
+
+        return $cTypes;
     }
 
     public function getBackendlayouts(): array

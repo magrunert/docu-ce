@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns:t3="http://typo3.org/schemas/xliff" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2022-11-11T11:57:43+01:00">
+	<file source-language="en" target-language="de" original="" datatype="plaintext" date="2023-02-14T18:11:59+01:00">
 		<body>
 			<trans-unit id="back" resname="back">
 				<source>back</source>
@@ -77,6 +77,10 @@
 			<trans-unit id="list_ctypes" resname="list_ctypes">
 				<source>List of used content types</source>
 				<target>Liste der verwendeten content types</target>
+			</trans-unit>
+			<trans-unit id="notUsedCtypes" resname="notUsedCtypes">
+				<source>Ctypes not in use</source>
+				<target>Nicht verwendete Ctypes</target>
 			</trans-unit>
 			<trans-unit id="page_hidden" resname="page_hidden">
 				<source>Hidden page</source>

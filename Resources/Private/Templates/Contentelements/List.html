@@ -49,6 +49,31 @@
         </tbody>
     </table>
 
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>{f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:notUsedCtypes')}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <f:if condition="{notUsedElements -> f:count()} > 0">
+            <f:then>
+                <f:for each="{notUsedElements}" as="notUsedElement">
+                    <tr>
+                        <td>
+                            {notUsedElement}
+                        </td>
+                    </tr>
+                </f:for>
+            </f:then>
+            <f:else>
+                <tr><td> - </td></tr>
+            </f:else>
+        </f:if>
+
+        </tbody>
+    </table>
+
     <h2>
         {f:translate(key:'LLL:EXT:docu_ce/Resources/Private/Language/locallang_be.xlf:list_backendlayouts')}
     </h2>
