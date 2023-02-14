@@ -4,7 +4,6 @@
 
 <f:layout name="Backend/Default" />
 
-
 <f:section name="content">
 
     <div class="docu_ce__show">
@@ -23,6 +22,11 @@
                         <h3 class="card-subtitle my-2 text-muted">
                             <f:translate key="{ceWizardItem.title}" />
                         </h3>
+
+                        <f:link.action action="mdFile">
+                            show md File
+                        </f:link.action>
+
 
                         <div class="mb-2 card-text">
                             <f:if condition="{ceWizardItem.external_url}">

@@ -9,7 +9,7 @@ defined('TYPO3') || die();
         'listcontentelements',
         '',
         [
-            \Magrunert\DocuCe\Controller\ContentelementsController::class => 'list, show, showBackendLayout',
+            \Magrunert\DocuCe\Controller\ContentelementsController::class => 'list, show, showBackendLayout, mdFile',
 
         ],
         [
