@@ -6,22 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="{path}vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
 </head>
 <body>
-<div id="app"></div>
-<script>
-    var docRootPath = '{docRoothPath->f:format.htmlentitiesDecode()}';
-    var documentationName = '{documentationName}';
-    window.$docsify = {
-        name: documentationName,
-        basePath: docRootPath,
-        loadSidebar: true,
-        loadNavbar: true,
-        subMaxLevel: 0,
-        autoHeader: false
-    }
-</script>
-<script src="{path}docsify_4.js"></script>
+    <div id="app"></div>
+    <script>
+        var docRootPath = '{docRoothPath->f:format.htmlentitiesDecode()}';
+        var documentationName = '{documentationName}';
+        window.$docsify = {
+            name: documentationName,
+            basePath: docRootPath,
+            relativePath: true,
+        }
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
+
+<f:comment>
+<!--    @TBD get path of docsify  and css-->
+    <!--    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>-->
+    <!--    <script src="{path}docsify_4.js"></script>-->
+</f:comment>
+
 </html>

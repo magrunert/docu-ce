@@ -30,6 +30,7 @@ class ContentelementsServeController
     {
         $response = new Response();
         $file = $this->getFile($request->getQueryParams()['path'] ?? '');
+
         if ($file) {
             $content = file_get_contents($file);
 
@@ -55,22 +56,22 @@ class ContentelementsServeController
 
     private function getFile(string $path): string
     {
-//        $path = PathUtility::getCanonicalPath($path);
-//        if (!StringUtility::beginsWith($path, $this->extensionConfiguration['documentationRootPath'] ?? '')) {
-//            return '';
-//        }
 
-        $path = "/packages/theme/Resources/Private/Docs/index.md";
+        //@TBD get path
+        $path = "../../../doc/Integration/Hero/index.md";
 
         $fileInfo = pathinfo($path);
+
         if (!in_array(strtolower($fileInfo['extension']), ['png', 'svg', 'gif', 'md', 'doc', 'docx', 'jpeg', 'jpg'], true)) {
             return '';
         }
 
-        $file = Environment::getPublicPath() . $path;
-        if (!is_file($file)) {
-            return '';
-        }
+//        $file = Environment::getProjectPath() . $path;
+        $file = $path;
+
+//        if (!is_file($file)) {
+//            return '';
+//        }
 
         return $file;
     }

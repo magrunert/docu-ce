@@ -108,16 +108,20 @@ class ContentelementsController extends ActionController
 
     private function getStandaloneView(): StandaloneView
     {
+        //@TBD get path
         //$settings = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class)->get('docu-ce');
         //$docRootPath = $settings['documentationRootPath'] ?? '';
-        $docRootPath = "/packages/theme/Resources/Private/Docs/index.md";
+        $docRootPath = "../../../doc/Integration/Hero/";
+
         if (!$docRootPath) {
             throw new \UnexpectedValueException('Documentation root path not set', 1609235458);
         }
 
         $documentationName = 'Documentation';
 
+        //@TBD get path
         $publicResourcesPath = '../../' . PathUtility::getRelativePathTo(ExtensionManagementUtility::extPath('docu_ce')) . 'Resources/Public/Docsify/';
+
 
         $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
         $uri = $uriBuilder->buildUriFromRoute('ajax_contentelements_serve', ['path' => $docRootPath]);
