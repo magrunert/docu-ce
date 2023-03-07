@@ -8,7 +8,7 @@ Additional information about the content elements is displayed, as well as infor
 ## Installation
 Just do
 ```
-composer require magrunert/docu-ce
+composer require magrunert/docu_ce
 ```
 
 **Set your Page TSconfig globally**
